@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>电影时间网</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- 内嵌css样式表 -->
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        img:hover {
+            transform: scale(1.01);
+            /* 鼠标悬停时图片放大 */
+            opacity: 0.8;
+            /* 鼠标悬停时图片透明度降低 */
+        }
+
+        #nav {
+            height: 30%;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 0.2em solid #2fa3ee;
+            margin-bottom: 0.4em;
+        }
+
+        .logo {
+            padding: 20px 10px 10px 0px;
+            width: 60%;
+        }
+
+        .logo img {
+            width: 285px;
+            height: 63px;
+        }
+
+        .header_right {
+            float: left;
+        }
+
+        .header_left {
+            float: left;
+        }
+
+        .header_left ul {
+            list-style-type: none;
+        }
+
+        .header_left li {
+            float: left;
+            padding: 20px 7px;
+        }
+
+        .header_left a {
+            text-decoration: none;
+            /* 移除链接下划线 */
+            color: black;
+        }
+
+        .header_left a:hover {
+            color: red;
+        }
+
+        .ban_img {
+            width: 960px;
+            height: 440px;
+        }
+
+        #ban {
+            height: 60%;
+        }
+
+        .con_title_1 {
+            border-bottom: 0.2em solid #11a3e8;
+            margin-bottom: 0.4em;
+            padding: 20px 5px;
+        }
+
+        .con_title_1 span {
+            font-size: 1.5em;
+            padding: 20px 0px;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+        }
+
+        .mov_img {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .mov_img img {
+            width: 92px;
+            height: 130px;
+        }
+
+        .movie_info a:hover {
+            color: red;
+        }
+
+        .mov_infoimg img {
+            width: 258px;
+            height: 297px;
+        }
+
+        .con_content {
+            width: 100%;
+            display: flex;
+        }
+
+        .movie_info {
+            width: 70%;
+        }
+
+        .mov_infoimg {
+            width: 30%;
+            float: left;
+        }
+
+        .movie_intr {
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            /* 限制在两行文本 */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-indent: 2em;
+        }
+
+        .con_title_2 {
+            border-bottom: 0.2em solid #cccccc;
+            margin-bottom: 0.4em;
+            padding: 20px 5px;
+        }
+
+        .con_title_2 span {
+            font-size: 1.5em;
+            padding: 20px 0px;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+        }
+
+        .con_title_3 {
+            padding: 20px 0px;
+            border-top: 0.2em solid #11a3e8;
+            margin-top: 0.5em;
+            border-bottom: 0.2em solid #cccccc;
+            margin-bottom: 0.4em;
+        }
+
+        .con_content_nev {
+            display: flex;
+            align-items: center;
+            /* 这会使所有子元素垂直居中 */
+            justify-content: left;
+            padding: 0.8em 0px;
+            border-bottom: 0.2em solid #cccccc;
+        }
+
+        .con_content_nev_l {
+            float: left;
+            padding: 0px 10px 0px 10px;
+        }
+
+        .con_content_nev_r {
+            padding: 0px 20px 0px 10px;
+        }
+
+        .con_content_nev_r_t {
+            color: #ff7d26;
+			font-size: 1.1em;
+        }
+
+        .con_content_nev_r_t span {
+            color: #bdbdbd;
+            margin-left: 1.2em;
+        }
+
+        .con_content_nev_r_l {
+            color: #ff7d26;
+        }
+
+        .con_content_nev_r_c {
+            margin-top: 10px;
+        }
+		.footwarp{
+			text-align: center;
+		}
+		
+		.footwarp_p1{
+			display: flex;
+			justify-content: center;
+		}
+
+        .footwarp_p1 ul {
+            list-style-type: none;
+        }
+
+        .footwarp_p1 li {
+            float: left;
+            padding: 30px 7px 10px 10px;
+        }
+
+        .footwarp_p1 a {
+            text-decoration: none;
+            /* 移除链接下划线 */
+			color: #2525ff;
+        }
+
+        .footwarp_p1 a:hover {
+            color: red;
+        }
+		.footwarp_p2,.footwarp_p3{
+			padding: 10px 7px;
+		}
+		.footwarp_p2 span{
+			color: red;
+		}
+		.myred{
+			color: #ff0505;
+		}
+		
+    </style>
+</head>
+
+<body>
+    <div style="width:960px; margin:0 auto">
+        <!-- Header Begin -->
+        <div id="nav">
+            <div class="header_right">
+                <div class="logo">
+                    <img src="img/logo.jpg" />
+                </div>
+            </div>
+            <div class="header_left">
+                <ul>
+                    <li><a href="#">电影时间首页</a></li>
+                    <li><a href="#">|</a></li>
+                    <li><a href="#">登录</a></li>
+                    <li><a href="#">|</a></li>
+                    <li><a href="#">注册</a></li>
+                    <li><a href="#">|</a></li>
+                    <li><a href="#">收藏</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Header End -->
+
+        <!-- Banner Begin -->
+        <div id="ban">
+            <div class="ban_img">
+                <a href="https://www.iqiyi.com/v_19rrj5sf9o.html"><img src="./img/banner.jpg" alt="孔子"></a>
+            </div>
+        </div>
+        <!-- Banner End -->
+
+        <!-- New Movie Begin -->
+        <div id="latest_movies">
+            <div class="con_title_1">
+                <span>最新电影</span>
+            </div>
+            <div class="mov_img">
+                <a href="#"><img src="img/img_01.jpg" alt="img_01"></a>
+                <a href="#"><img src="img/img_02.jpg" alt="img_02"></a>
+                <a href="#"><img src="img/img_03.jpg" alt="img_03"></a>
+                <a href="#"><img src="img/img_04.jpg" alt="img_04"></a>
+                <a href="#"><img src="img/img_05.jpg" alt="img_05"></a>
+                <a href="#"><img src="img/img_06.jpg" alt="img_06"></a>
+                <a href="#"><img src="img/img_07.jpg" alt="img_07"></a>
+                <a href="#"><img src="img/img_08.jpg" alt="img_08"></a>
+                <a href="#"><img src="img/img_09.jpg" alt="img_09"></a>
+            </div>
+        </div>
+        <!-- New Movie End -->
+
+        <!-- Hot Movie Begin -->
+        <div id="hot_movie_intro">
+            <div class="con_title_2">
+                <span>热门电影介绍</span>
+            </div>
+            <div class="con_content">
+                <div class="movie_info">
+                    <div class="t1" style="margin-bottom: 20px;">
+						<span class="myred">西游降魔篇</span>
+                        <a href="https://www.iqiyi.com/v_19rro9gb1c.html">高清视频在线观看 爱奇艺</a>
+                    </div>
+                    <div class="pl">上映时间：<span>2013年2月10日</span></div>
+                    <div class="pl">导演：<span class="attrs"><a class="myred" href="https://movie.douban.com/celebrity/1048026/">周星驰</a>
+                            /
+                            <a class="myred" href="https://movie.douban.com/celebrity/1274244/"">郭子健</a></span></div>
+            		<div class=" p1">发行公司：<span>安乐影片</span></div>
+                    <div class="p1">主演：
+					<span><a href="https://movie.douban.com/celebrity/1274242/">黄渤</a></span>
+                        <span><a href="https://movie.douban.com/celebrity/1011513/">文章</a></span>
+                        <span><a href="https://movie.douban.com/celebrity/1138320/">舒淇</a></span>
+						<span><a href="https://movie.douban.com/celebrity/1313563/">周秀娜</a></span>
+                        <span><a href="https://movie.douban.com/celebrity/1274317/">罗志祥</a></span>
+                        <span><a href="https://movie.douban.com/celebrity/1326286/">李尚正</a></span>
+						<span><a href="https://movie.douban.com/celebrity/1314248/">赵志凌</a></span>
+						<span><a href="https://movie.douban.com/celebrity/1317329/">杨迪</a></span>						
+                    </div>
+                    <div class="p1">片长：<span>110分钟</span></div>
+                    <div class="p1 myred">类型：<span>喜剧 / 奇幻 / 冒险</span></div>
+                    <div class="p1">定价：<span class="myred">150元</span></div>
+                    <div class="p1">简介：<span class="movie_intr">大唐年间妖魔横行，一小渔村因为饱受鱼妖之害请来道士（冯勉恒 饰）除妖，年轻驱魔人陈玄奘（文章
+                            饰）前来帮忙却被误认为骗子，幸亏职业赏金驱魔人段小姐（舒淇
+                            饰）帮助玄奘制服了鱼妖真身（李尚正 饰）。二人又在高家庄为制服猪妖猪刚鬣（陈炳强 饰） 而再次相遇，这次除妖没有成功
+                            ，但是段小姐却对玄奘二见钟情。玄奘求助师父，得知除妖的办法是去找被压在五指山下的孙悟空（黄渤
+                            饰）帮忙，于是他准备前往五指山，途中又遇到段小姐和手下五煞，段小姐连蒙带哄想与玄奘在一起却屡次遭拒，在四妹（周秀娜
+                            饰）调教下想变得更有女人味却适得其反。二人决裂后玄奘独自上路，与此同时降魔师（释延能 饰）、天残脚（张超理 饰）、空虚公子（罗志祥
+                            饰）也一同前往除妖。经过千辛万苦玄奘终于找到孙悟空，段小姐又再次出现并交给玄奘一件重要的东西，猪妖终于被降服，但是更大的危机又出现在了玄奘面前，原来孙悟空与传闻中不一样，玄奘的除魔之路能否继续？
+                            　　本片是周星驰多年之后的力作，演员阵容延续了以往，除了主演外，还请了诸如卢正雨、杨迪等网络红人加盟。</span></div>
+                </div>
+                <div class="mov_infoimg">
+                    <img src="./img/moviebanner.jpg" alt="西游降魔篇">
+                </div>
+            </div>
+        </div>
+        <!-- Hot Movie End -->
+
+        <!-- Comment Begin -->
+        <div id="netizens_evaluation">
+            <div class="con_title_3">
+                <img src="./img/comment.jpg" alt="comment">
+            </div>
+            <div class="con_content_warp">
+                <div class="con_content_nev">
+                    <div class="con_content_nev_l"><img src="./img/pic01.jpg" alt="pic01"></div>
+                    <div class="con_content_nev_r">
+                        <p class="con_content_nev_r_t">影迷无敌001<span>2023-12-15 19:26:37</span></p>
+                        <p class="con_content_nev_r_c">个人认为小时代毫无看点，看了不到半小时就要睡着了，我已无力吐槽，建议大家还是去读原著吧!!!</p>
+                        <p class="con_content_nev_r_l">来自：大众点评网友</p>
+                    </div>
+                </div>
+                <div class="con_content_nev">
+                    <div class="con_content_nev_l"><img src="./img/pic02.jpg" alt="pic02"></div>
+                    <div class="con_content_nev_r">
+                        <p class="con_content_nev_r_t">时光不老<span>2023-12-15 18:11:35</span></p>
+                        <p class="con_content_nev_r_c">个人认为小时代毫无看点，看了不到半小时就要睡着了，我已无力吐槽，建议大家还是去读原著吧!!!</p>
+                        <p class="con_content_nev_r_l">来自：大众点评网友</p>
+                    </div>
+                </div>
+                <div class="con_content_nev">
+                    <div class="con_content_nev_l"><img src="./img/pic03.jpg" alt="pic03"></div>
+                    <div class="con_content_nev_r">
+                        <p class="con_content_nev_r_t">cocoke<span>2022-12-11 19:31:45</span></p>
+                        <p class="con_content_nev_r_c">星爷的每一部电影都很经典，重复地看过很多遍，每次都有更深刻的理解和更深的感悟，同样期待《美人鱼》</p>
+                        <p class="con_content_nev_r_l">来自：大众点评网友</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Comment End -->
+
+        <!-- Footer Begin -->
+        <div class="footwarp">
+				<div class="footwarp_p1">
+					<ul>
+						<li><a href="#">公司简介</a></li>
+						<li><a href="#">|</a></li>
+						<li><a href="#">关于我们</a></li>
+						<li><a href="#">|</a></li>
+						<li><a href="#">联系我们</a></li>
+						<li><a href="#">|</a></li>
+						<li><a href="#">友情链接</a></li>
+						<li><a href="#">|</a></li>
+						<li><a href="#">招聘信息</a></li>
+						<li><a href="#">|</a></li>
+						<li><a href="#">产品答疑</a></li>
+					</ul>
+				</div>
+			<div class="footwarp_p2">
+				<span>免责声明：</span>本网站内容收集于互联网，电影时光网不承担任何由于内容的合法性及健康性所引起的争议和法律责任。
+			</div>
+			<div class="footwarp_p3">欢迎大家对网站内容侵犯版权等不合法和不健康行为进行监督和举报。</div>
+        </div>
+        <!-- Footer End -->
+    </div>
+</body>
+
+</html>
