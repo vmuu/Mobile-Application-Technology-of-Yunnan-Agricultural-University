@@ -2,7 +2,95 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<link rel="stylesheet" href="./css/font-awesome.min.css" />
 		<title>我的邮箱</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.menu_header-text{
+				background-color: black;
+				color: white;
+				padding: 40px;
+				border-radius: 20px 20px 0px 0px;
+				font-size: 2.5em;
+			}
+			.fa-envelope{
+				color: blue;
+			}
+			.fa-flag{
+				color: red;
+			}
+			.fa-space-shuttle{
+				color: green;
+			}
+			.fa-archive{
+				color: orange;
+			}
+			.fa-trash{
+				color: grey;
+			}
+			.nav{
+				list-style-type: none;
+			}
+			.fa{
+				/* float: left; */
+				width: 80px;
+			}
+			.nav_item-text{
+				width: 100px;
+				color: grey;
+				text-align: left;
+			}
+			.nav a{
+				text-decoration: none;
+			}
+			.nav li{
+				padding: 30px;
+				border-bottom: 1px solid grey;
+				font-size: 2.5em;
+			}
+			
+			.nav_item-text:first span{
+				color: white;
+			}
+			.nav li:last-child {
+			    border-bottom: none;
+			}
+			.badge{
+				width: 100px;
+				float: right;
+				color: grey;
+				text-align: center;
+				padding: 5px;
+				border-radius: 20px;
+				border: 2px solid black;
+			}
+			.nav li:first-child{
+				background-color: #999999;
+			}
+			.nav li:first-child .nav_item-text{
+				color: white;
+			}
+			.nav li:first-child .badge{
+				color: white;
+			}
+			.nav li:hover{
+				background-color: #cccccc;
+			}
+			.nav li:hover .nav_item-text{
+				color: white;
+			}
+			.nav li:hover .badge{
+				color: white;
+				border: 2px solid white;
+				background-color: red;
+			}
+			.nav_item-text:hover{
+				color: white;
+			}
+		</style>
 	</head>
 	<body>
 	<div class="l-main">
@@ -28,11 +116,7 @@
 	                <li><a href="#"><i class="fa fa-trash nav_item-icon">
 	                </i><span class="nav_item-text">已删除</span> <span class="badge">5</span></a>
 	                </li>
-	                <li><a href="#"><span class="nav_item-text">
-	                        所有邮件</span> </a></li>	
-	                <!-- # 测试hi -->	
-					
-					
+	                <li><a href="#"><span class="nav_item-text">所有邮件</span> </a></li>	
 	            </ul>
 	        </nav>
 	    </div>
